@@ -2100,4 +2100,8 @@
         <item>Trying to project media</item>
         <item>Trying to activate vpn</item>
     </string-array>
+
+    <!-- Configuration to enable non-default PDP during IWLAN -->
+    <bool name="config_feature_iwlan_enabled">false</bool>
+
 </resources>
