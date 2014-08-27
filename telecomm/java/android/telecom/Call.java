@@ -544,6 +544,8 @@ public final class Call {
     private String mRemainingPostDialSequence;
     private InCallService.VideoCall mVideoCall;
     private Details mDetails;
+    private int mNotificationType;
+    private int mNotificationCode;
 
     /**
      * Obtains the post-dial sequence remaining to be emitted by this {@code Call}, if any.
@@ -553,6 +555,16 @@ public final class Call {
      */
     public String getRemainingPostDialSequence() {
         return mRemainingPostDialSequence;
+    }
+
+    /** @hide */
+    public int getNotificationType() {
+        return mNotificationType;
+    }
+
+    /** @hide */
+    public int getNotificationCode() {
+        return mNotificationCode;
     }
 
     /**
@@ -823,6 +835,9 @@ public final class Call {
         if (detailsChanged) {
             mDetails = details;
         }
+
+        mNotificationType = parcelableCall.getNotificationType();
+        mNotificationCode = parcelableCall.getNotificationCode();
 
         boolean cannedTextResponsesChanged = false;
         if (mCannedTextResponses == null && parcelableCall.getCannedSmsResponses() != null
