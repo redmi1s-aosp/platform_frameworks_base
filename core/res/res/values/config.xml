@@ -2101,6 +2101,9 @@
         <item>Trying to activate vpn</item>
     </string-array>
 
+    <!-- Configuartion to support ESN Tracker -->
+    <bool name="config_telephony_ESN_Tracker_enabled">false</bool>
+
     <!-- Configuration to enable non-default PDP during IWLAN -->
     <bool name="config_feature_iwlan_enabled">false</bool>
 
