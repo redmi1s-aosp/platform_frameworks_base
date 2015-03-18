@@ -64,10 +64,6 @@ public final class RemoteConnection {
                 RemoteConnection connection,
                 DisconnectCause disconnectCause) {}
 
-        /** @hide */
-        public void setDisconnectedWithSsNotification(RemoteConnection connection,
-                int disconnectCause, String disconnectMessage, int type, int code) {}
-
         /**
          * Invoked when this {@code RemoteConnection} is requesting ringback. See
          * {@link #isRingbackRequested()}.
@@ -824,15 +820,6 @@ public final class RemoteConnection {
             for (Callback c : mCallbacks) {
                 c.onDisconnected(this, mDisconnectCause);
             }
-        }
-    }
-
-    /** @hide */
-   public void setDisconnectedWithSsNotification(int disconnectCause,
-                String disconnectMessage, int type, int code) {
-        for (Listener l : mListeners) {
-            l.setDisconnectedWithSsNotification(this, disconnectCause,
-                    disconnectMessage, type, code);
         }
     }
 
